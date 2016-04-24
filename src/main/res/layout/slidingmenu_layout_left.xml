@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dip"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/sliding_menu_one"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="sliding_menu_click"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:layout_marginBottom="30dip"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:text="Fragment1" />
+    <TextView
+        android:id="@+id/sliding_menu_two"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="sliding_menu_click"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:layout_marginBottom="30dip"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:text="Fragment2" />
+    <TextView
+        android:id="@+id/sliding_menu_three"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="sliding_menu_click"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:layout_marginBottom="30dip"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:text="Fragment3" />
+
+</LinearLayout>  

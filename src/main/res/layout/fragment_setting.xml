@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chengbiao.ricky.projectframe.fragment.SettingFragment">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginBottom="20dip"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:text="Fragmentsetting"/>
+
+</FrameLayout>
