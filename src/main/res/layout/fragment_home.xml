@@ -1,15 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chengbiao.ricky.projectframe.fragment.HomeFragment">
+    tools:context="com.chengbiao.ricky.projectframe.fragment.HomeFragment"
+    android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_title1"
+        android:onClick="ClickEvent"
         android:layout_width="fill_parent"
         android:layout_height="50dip"
-        android:layout_marginBottom="20dip"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@android:color/white"
+        android:text="Fragmenthome"/>
+    <Button
+        android:id="@+id/btn_title2"
+        android:onClick="ClickEvent"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:text="Fragmenthome"/>
+    <Button
+        android:id="@+id/btn_title3"
+        android:onClick="ClickEvent"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
         android:text="Fragmenthome"/>
 
-</FrameLayout>
+</LinearLayout>

@@ -4,23 +4,27 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.Window;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.chengbiao.ricky.projectframe.config.ContextTitleEnum;
+import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.fragment.AboutFragment;
 import com.chengbiao.ricky.projectframe.fragment.HomeFragment;
 import com.chengbiao.ricky.projectframe.fragment.SettingFragment;
+import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingFragmentActivity;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingMenu;
 
 
 public class MainActivityCanSliding extends SlidingFragmentActivity {
-
     public static SlidingMenu sm;
 
+    private TextView tv_title_inContext;
     private AboutFragment mAboutFragment;
     private HomeFragment mHomeFragment;
     private SettingFragment mSettingFragment;
 
+    private SetTitleInterface mSetTitleInterface;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,42 +40,107 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
         sm.setShadowWidthRes(R.dimen.sliding_menu_shadow_width);
         sm.setBehindWidthRes(R.dimen.sliding_menu_width);
 
-        if (mAboutFragment == null)
-            mAboutFragment = new AboutFragment();
-        switchFragment(mAboutFragment);
+        init();
     }
 
-    public static void mytoggle(){
+    private void init(){
+        tv_title_inContext = (TextView) findViewById(R.id.tv_title_inContext);
+
+        mSetTitleInterface = new SetTitleInterface() {
+            @Override
+            public void setTitle(ContextTitleEnum titleEnum) {
+                changeTitle(titleEnum);
+            }
+        };
+
+        getFragmentInstances(StaticTag.defaultFragment);
+    }
+
+    private void getFragmentInstances(ContextTitleEnum contextTitleEnum){
+        switch (contextTitleEnum){
+            case HOME:
+                mSetTitleInterface.setTitle(ContextTitleEnum.HOME);
+                if (mHomeFragment == null) {
+                    mHomeFragment = new HomeFragment();
+                }
+                mHomeFragment.setSetTitleInterface(mSetTitleInterface);
+                switchFragment(mHomeFragment);
+                break;
+            case SETTING:
+                mSetTitleInterface.setTitle(ContextTitleEnum.SETTING);
+                if (mSettingFragment == null)
+                    mSettingFragment = new SettingFragment();
+//                mSettingFragment.setSetTitleInterface(mSetTitleInterface);
+                switchFragment(mSettingFragment);
+                break;
+            case ABOUT:
+                mSetTitleInterface.setTitle(ContextTitleEnum.ABOUT);
+                if (mAboutFragment == null)
+                    mAboutFragment = new AboutFragment();
+//                mAboutFragment.setSetTitleInterface(mSetTitleInterface);
+                switchFragment(mAboutFragment);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void switchFragment(Fragment fragment) {
         sm.toggle();
-    }
-
-    public void switchFragment(Fragment fragment) {
-        mytoggle();
         getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
     }
 
     public void sliding_menu_click(View view){
         switch(view.getId()){
-            case R.id.sliding_menu_one:
-                if(mAboutFragment == null)
-                    mAboutFragment = new AboutFragment();
-                switchFragment(mAboutFragment);
-                Toast.makeText(this, "have running...", 0).show();
+            case R.id.iv_slidingmenu:
+                sm.toggle();
                 break;
-            case R.id.sliding_menu_two:
-                if(mHomeFragment == null)
-                    mHomeFragment = new HomeFragment();
-                switchFragment(mHomeFragment);
-                Toast.makeText(this, "have running...", 0).show();
+            case R.id.ll_menu_home:
+                StaticTag.defaultFragment = ContextTitleEnum.HOME;
+                getFragmentInstances(StaticTag.defaultFragment);
                 break;
-            case R.id.sliding_menu_three:
-                if(mSettingFragment == null)
-                    mSettingFragment = new SettingFragment();
-                switchFragment(mSettingFragment);
-                Toast.makeText(this, "have running...", 0).show();
+            case R.id.ll_menu_setting:
+                StaticTag.defaultFragment = ContextTitleEnum.SETTING;
+                getFragmentInstances(StaticTag.defaultFragment);
+                break;
+            case R.id.ll_menu_about:
+                StaticTag.defaultFragment = ContextTitleEnum.ABOUT;
+                getFragmentInstances(StaticTag.defaultFragment);
+                break;
+            default:
                 break;
         }
     }
 
+    private void changeTitle(ContextTitleEnum titleEnum){
+        switch(titleEnum){
+            case HOME:
+                setTitle(R.string.left_menu_home);
+                break;
+            case SETTING:
+                setTitle(R.string.left_menu_setting);
+                break;
+            case ABOUT:
+                setTitle(R.string.left_menu_about);
+                break;
+            case MYHOME:
+                setTitle(R.string.main_index_home);
+                break;
+            case MYMOMENTS:
+                setTitle(R.string.main_index_moments);
+                break;
+            case MYORDER:
+                setTitle(R.string.main_index_order);
+                break;
+            case MYCENTER:
+                setTitle(R.string.main_index_center);
+                break;
+            default:
+                break;
+        }
+    }
 
+    public void setTitle(int id){
+        tv_title_inContext.setText(getResources().getString(id));
+    }
 }

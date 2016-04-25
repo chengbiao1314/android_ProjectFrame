@@ -5,4 +5,25 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- left menu  -->
+    <style name="ll_layout_slidingmenu_left">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:onClick">sliding_menu_click</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="iv_layout_slidingmenu_left">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="tv_layout_slidingmenu_left">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
