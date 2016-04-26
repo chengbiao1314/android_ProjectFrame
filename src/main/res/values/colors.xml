@@ -2,4 +2,5 @@
 <resources>
     <color name="mainColor">#F85050</color>
     <color name="my_white">#ffffff</color>
+    <color name="my_gray">#3C3F41</color>
 </resources>

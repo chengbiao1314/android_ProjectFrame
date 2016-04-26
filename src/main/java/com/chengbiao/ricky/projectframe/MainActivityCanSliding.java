@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.chengbiao.ricky.projectframe.config.ContextTitleEnum;
+import com.chengbiao.ricky.projectframe.config.ContextSelectEnum;
 import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.fragment.AboutFragment;
 import com.chengbiao.ricky.projectframe.fragment.HomeFragment;
@@ -14,6 +14,7 @@ import com.chengbiao.ricky.projectframe.fragment.SettingFragment;
 import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingFragmentActivity;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingMenu;
+import com.chengbiao.ricky.projectframe.utils.StringUtils;
 
 
 public class MainActivityCanSliding extends SlidingFragmentActivity {
@@ -48,7 +49,7 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
 
         mSetTitleInterface = new SetTitleInterface() {
             @Override
-            public void setTitle(ContextTitleEnum titleEnum) {
+            public void setTitle(ContextSelectEnum titleEnum) {
                 changeTitle(titleEnum);
             }
         };
@@ -56,10 +57,10 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
         getFragmentInstances(StaticTag.defaultFragment);
     }
 
-    private void getFragmentInstances(ContextTitleEnum contextTitleEnum){
-        switch (contextTitleEnum){
+    private void getFragmentInstances(ContextSelectEnum contextSelectEnum){
+        switch (contextSelectEnum){
             case HOME:
-                mSetTitleInterface.setTitle(ContextTitleEnum.HOME);
+                mSetTitleInterface.setTitle(ContextSelectEnum.HOME);
                 if (mHomeFragment == null) {
                     mHomeFragment = new HomeFragment();
                 }
@@ -67,14 +68,14 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
                 switchFragment(mHomeFragment);
                 break;
             case SETTING:
-                mSetTitleInterface.setTitle(ContextTitleEnum.SETTING);
+                mSetTitleInterface.setTitle(ContextSelectEnum.SETTING);
                 if (mSettingFragment == null)
                     mSettingFragment = new SettingFragment();
 //                mSettingFragment.setSetTitleInterface(mSetTitleInterface);
                 switchFragment(mSettingFragment);
                 break;
             case ABOUT:
-                mSetTitleInterface.setTitle(ContextTitleEnum.ABOUT);
+                mSetTitleInterface.setTitle(ContextSelectEnum.ABOUT);
                 if (mAboutFragment == null)
                     mAboutFragment = new AboutFragment();
 //                mAboutFragment.setSetTitleInterface(mSetTitleInterface);
@@ -96,15 +97,15 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
                 sm.toggle();
                 break;
             case R.id.ll_menu_home:
-                StaticTag.defaultFragment = ContextTitleEnum.HOME;
+                StaticTag.defaultFragment = ContextSelectEnum.HOME;
                 getFragmentInstances(StaticTag.defaultFragment);
                 break;
             case R.id.ll_menu_setting:
-                StaticTag.defaultFragment = ContextTitleEnum.SETTING;
+                StaticTag.defaultFragment = ContextSelectEnum.SETTING;
                 getFragmentInstances(StaticTag.defaultFragment);
                 break;
             case R.id.ll_menu_about:
-                StaticTag.defaultFragment = ContextTitleEnum.ABOUT;
+                StaticTag.defaultFragment = ContextSelectEnum.ABOUT;
                 getFragmentInstances(StaticTag.defaultFragment);
                 break;
             default:
@@ -112,7 +113,7 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
         }
     }
 
-    private void changeTitle(ContextTitleEnum titleEnum){
+    private void changeTitle(ContextSelectEnum titleEnum){
         switch(titleEnum){
             case HOME:
                 setTitle(R.string.left_menu_home);
@@ -141,6 +142,6 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
     }
 
     public void setTitle(int id){
-        tv_title_inContext.setText(getResources().getString(id));
+        tv_title_inContext.setText(StringUtils.getStringFromRes(this,id));
     }
 }
