@@ -20,6 +20,10 @@
             android:name=".base.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
+        <activity
+            android:name=".baidumap.BaiDuMapActivity"
+            android:label="@string/title_activity_bai_du_map" >
+        </activity>
     </application>
 
 </manifest>

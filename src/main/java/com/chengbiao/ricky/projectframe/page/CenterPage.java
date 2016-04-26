@@ -2,6 +2,7 @@ package com.chengbiao.ricky.projectframe.page;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.chengbiao.ricky.projectframe.R;
@@ -22,6 +23,9 @@ public class CenterPage extends BasePage {
     @Override
     public void initData() {
         mOnClickListener = super.mOnClickListener;
+
+        Button btn = (Button) rootview.findViewById(R.id.btn_1);
+        btn.setOnClickListener(mOnClickListener);
     }
 
     @Override
