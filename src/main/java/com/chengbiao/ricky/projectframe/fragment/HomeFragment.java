@@ -112,6 +112,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void mOnClick(View v) {
         mSetTitleInterface.setTitle(ContextSelectEnum.MYMOMENTS);
+                MainActivityCanSliding.sm.clearIgnoredViews();
         switch(v.getId()){
             case R.id.ll_home_fragment_home:
                 selectIcon(ContextSelectEnum.MYHOME);
@@ -121,6 +122,7 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.ll_order_fragment_home:
                 selectIcon(ContextSelectEnum.MYORDER);
+                        MainActivityCanSliding.sm.addIgnoredView(vp_content);
                 break;
             case R.id.ll_center_fragment_home:
                 selectIcon(ContextSelectEnum.MYCENTER);
