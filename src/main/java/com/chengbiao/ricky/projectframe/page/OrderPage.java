@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BasePage;
+import com.chengbiao.ricky.projectframe.utils.ToastUtil;
 
 public class OrderPage extends BasePage {
     private MOnClickListener mOnClickListener;
@@ -32,7 +33,7 @@ public class OrderPage extends BasePage {
     public void mOnClick(View v) {
         switch (v.getId()){
             case R.id.btn_1:
-                Toast.makeText(context,"running...",Toast.LENGTH_SHORT).show();
+                ToastUtil.showToast(context, "running...");
                 break;
             default:
                 break;

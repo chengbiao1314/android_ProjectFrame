@@ -14,7 +14,7 @@ import com.chengbiao.ricky.projectframe.fragment.SettingFragment;
 import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingFragmentActivity;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingMenu;
-import com.chengbiao.ricky.projectframe.utils.StringUtils;
+import com.chengbiao.ricky.projectframe.utils.StringUtil;
 
 
 public class MainActivityCanSliding extends SlidingFragmentActivity {
@@ -142,6 +142,6 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
     }
 
     public void setTitle(int id){
-        tv_title_inContext.setText(StringUtils.getStringFromRes(this,id));
+        tv_title_inContext.setText(StringUtil.getStringFromRes(this, id));
     }
 }
