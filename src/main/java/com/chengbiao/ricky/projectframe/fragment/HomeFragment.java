@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chengbiao.ricky.projectframe.MainActivityCanSliding;
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.adapter.MyPageAdapter;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
@@ -104,6 +105,8 @@ public class HomeFragment extends BaseFragment {
 
         vp_content.setAdapter(new MyPageAdapter(pageList));
         selectIcon(StaticTag.defaultHomeSelect);
+
+//        MainActivityCanSliding.sm.addIgnoredView(vp_content);
     }
 
     @Override
@@ -131,6 +134,7 @@ public class HomeFragment extends BaseFragment {
         switch (selectIcon){
             case MYHOME:
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYHOME);
+                vp_content.setCurrentItem(0);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_on));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));
@@ -142,6 +146,7 @@ public class HomeFragment extends BaseFragment {
                 break;
             case MYMOMENTS:
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYMOMENTS);
+                vp_content.setCurrentItem(1);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_on));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));
@@ -153,6 +158,7 @@ public class HomeFragment extends BaseFragment {
                 break;
             case MYORDER:
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYORDER);
+                vp_content.setCurrentItem(2);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_on));
@@ -164,6 +170,7 @@ public class HomeFragment extends BaseFragment {
                 break;
             case MYCENTER:
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYCENTER);
+                vp_content.setCurrentItem(3);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));

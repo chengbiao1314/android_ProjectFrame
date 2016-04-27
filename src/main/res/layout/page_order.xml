@@ -1,14 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <Button
+   <!-- <Button
         android:id="@+id/btn_1"
-        android:layout_width="fill_parent"
+        android:layout_width="100dp"
         android:layout_height="50dip"
-        android:layout_marginBottom="20dip"
+        android:padding="5dp"
         android:gravity="center"
-        android:textSize="30sp"
+        android:background="@color/my_gray"
+        android:textSize="18sp"
         android:textColor="@android:color/white"
-        android:text="order page"/>
-</FrameLayout>
+        android:text="@string/main_index_order"/>-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content1_order_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"/>
+
+</LinearLayout>
