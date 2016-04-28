@@ -20,6 +20,7 @@ import com.chengbiao.ricky.projectframe.base.BasePage;
 import com.chengbiao.ricky.projectframe.config.ContextSelectEnum;
 import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
+import com.chengbiao.ricky.projectframe.myview.ViewPageIsScroll;
 import com.chengbiao.ricky.projectframe.page.CenterPage;
 import com.chengbiao.ricky.projectframe.page.HomePage;
 import com.chengbiao.ricky.projectframe.page.MomentsPage;
@@ -33,7 +34,8 @@ public class HomeFragment extends BaseFragment {
     private View view;
     private SetTitleInterface mSetTitleInterface;
 
-    private ViewPager vp_content;
+//    private ViewPager vp_content;
+    private ViewPageIsScroll vp_content;
     private LinearLayout ll_home;
     private LinearLayout ll_moments;
     private LinearLayout ll_order;
@@ -68,7 +70,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void getElement(){
-        vp_content = (ViewPager) view.findViewById(R.id.vp_content_fragment_home);
+        vp_content = (ViewPageIsScroll) view.findViewById(R.id.vp_content_fragment_home);
         iv_home = (ImageView) view.findViewById(R.id.iv_home_fragment_home);
         iv_moments = (ImageView) view.findViewById(R.id.iv_moments_fragment_home);
         iv_order = (ImageView) view.findViewById(R.id.iv_order_fragment_home);
@@ -103,16 +105,14 @@ public class HomeFragment extends BaseFragment {
         pageList.add(orderPage);
         pageList.add(centerPage);
 
+        vp_content.setScrollble(false);
         vp_content.setAdapter(new MyPageAdapter(pageList));
-        selectIcon(StaticTag.defaultHomeSelect);
 
-//        MainActivityCanSliding.sm.addIgnoredView(vp_content);
+        selectIcon(StaticTag.defaultHomeSelect);
     }
 
     @Override
     public void mOnClick(View v) {
-        mSetTitleInterface.setTitle(ContextSelectEnum.MYMOMENTS);
-                MainActivityCanSliding.sm.clearIgnoredViews();
         switch(v.getId()){
             case R.id.ll_home_fragment_home:
                 selectIcon(ContextSelectEnum.MYHOME);
@@ -122,7 +122,6 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.ll_order_fragment_home:
                 selectIcon(ContextSelectEnum.MYORDER);
-                        MainActivityCanSliding.sm.addIgnoredView(vp_content);
                 break;
             case R.id.ll_center_fragment_home:
                 selectIcon(ContextSelectEnum.MYCENTER);
@@ -133,6 +132,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void selectIcon(ContextSelectEnum selectIcon){
+        MainActivityCanSliding.sm.clearIgnoredViews();
         switch (selectIcon){
             case MYHOME:
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYHOME);
@@ -159,6 +159,7 @@ public class HomeFragment extends BaseFragment {
                 tv_center.setTextColor(getResources().getColor(R.color.my_gray));
                 break;
             case MYORDER:
+                MainActivityCanSliding.sm.addIgnoredView(vp_content);
                 mSetTitleInterface.setTitle(ContextSelectEnum.MYORDER);
                 vp_content.setCurrentItem(2);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
