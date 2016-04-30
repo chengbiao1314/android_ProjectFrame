@@ -5,6 +5,21 @@
         <!-- Customize your theme here. -->
     </style>
 
+
+
+
+    <!--dialog style-->
+    <style name="Dialog_Fullscreen" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+
+
+
     <!-- left menu  -->
     <style name="ll_layout_slidingmenu_left">
         <item name="android:layout_width">fill_parent</item>

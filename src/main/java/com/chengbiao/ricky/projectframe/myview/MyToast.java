@@ -1,4 +1,4 @@
-package com.chengbiao.ricky.projectframe.utils;
+package com.chengbiao.ricky.projectframe.myview;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.chengbiao.ricky.projectframe.R;
 
-public class ToastUtil{
+public class MyToast{
 
 	private static Toast toast;
 

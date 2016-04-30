@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BasePage;
-import com.chengbiao.ricky.projectframe.utils.ToastUtil;
+import com.chengbiao.ricky.projectframe.myview.MyToast;
 
 public class HomePage extends BasePage {
     private MOnClickListener mOnClickListener;
@@ -32,7 +32,7 @@ public class HomePage extends BasePage {
     public void mOnClick(View v) {
         switch (v.getId()){
             case R.id.btn_1:
-                ToastUtil.showToast(context, "running...");
+                MyToast.showToast(context, "running...");
                 break;
             default:
                 break;

@@ -141,7 +141,7 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
         }
     }
 
-    public void setTitle(int id){
-        tv_title_inContext.setText(StringUtil.getStringFromRes(this, id));
+    public void setTitle(int stringId){
+        tv_title_inContext.setText(StringUtil.getInstance().getStringFromRes(this, stringId));
     }
 }

@@ -2,11 +2,9 @@ package com.chengbiao.ricky.projectframe.page;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.Button;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BasePage;
-import com.chengbiao.ricky.projectframe.utils.ToastUtil;
 
 public class OrderPageD extends BasePage {
     private MOnClickListener mOnClickListener;

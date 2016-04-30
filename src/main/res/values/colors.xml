@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <drawable name="my_transparent">#00000000</drawable>
+    <drawable name="my_bg_white">#ffffffff</drawable>
+
     <color name="mainColor">#F85050</color>
     <color name="my_white">#ffffff</color>
     <color name="my_gray">#3C3F41</color>

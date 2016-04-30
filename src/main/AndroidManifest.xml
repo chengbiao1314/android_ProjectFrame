@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivityCanSliding"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,13 +17,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".base.BaseActivity"
-            android:label="@string/title_activity_base" >
-        </activity>
+            android:name=".MainActivityCanSliding"
+            android:label="@string/title_activity_main_activity_no_sliding" />
+        <activity
+            android:name=".MainActivityNoSliding"
+            android:label="@string/title_activity_main_activity_no_sliding" />
         <activity
             android:name=".baidumap.BaiDuMapActivity"
-            android:label="@string/title_activity_bai_du_map" >
-        </activity>
+            android:label="@string/title_activity_bai_du_map" />
+        <activity
+            android:name=".activity.DialogListActivity"
+            android:label="@string/title_activity_dialog_list" />
     </application>
 
 </manifest>
