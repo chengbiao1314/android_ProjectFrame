@@ -74,10 +74,12 @@ public class HttpRequest extends Thread {
                 LogUtil.v("requestBody:"+ stringResponse);
                 return stringResponse;
             }else{
+                LogUtil.v("request error..1");
                 throw new Exception("server error"+"("+responseCode+")");
             }
         }catch(Exception e){
-            return "";
+            LogUtil.v("request error..2");
+            return "request error...";
 
         }finally {
             if (outputStream != null) {

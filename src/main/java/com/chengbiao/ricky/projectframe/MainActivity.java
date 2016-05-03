@@ -2,21 +2,30 @@ package com.chengbiao.ricky.projectframe;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 
 import com.chengbiao.ricky.projectframe.network.HttpRequest;
 import com.chengbiao.ricky.projectframe.utils.ActivityUtil;
-
+import com.chengbiao.ricky.projectframe.utils.LogUtil;
 
 public class MainActivity extends Activity {
+
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            LogUtil.v("has run....");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HttpRequest http = new HttpRequest("stringResponse",null,null);
-        http.run();
+        LogUtil.v("****************run...***************");
+        HttpRequest http = new HttpRequest("http://www.hao123.com",null,handler);
+        http.start();
     }
 
     public void ActionClick(View v){
