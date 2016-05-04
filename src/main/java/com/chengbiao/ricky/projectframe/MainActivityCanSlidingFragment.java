@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.chengbiao.ricky.projectframe.config.ContextSelectEnum;
 import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.fragment.AboutFragment;
-import com.chengbiao.ricky.projectframe.fragment.HomeFragment;
+import com.chengbiao.ricky.projectframe.fragment.MainFragment;
 import com.chengbiao.ricky.projectframe.fragment.SettingFragment;
 import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
 import com.chengbiao.ricky.projectframe.slidingmenu.SlidingFragmentActivity;
@@ -17,12 +17,12 @@ import com.chengbiao.ricky.projectframe.slidingmenu.SlidingMenu;
 import com.chengbiao.ricky.projectframe.utils.StringUtil;
 
 
-public class MainActivityCanSliding extends SlidingFragmentActivity {
+public class MainActivityCanSlidingFragment extends SlidingFragmentActivity {
     public static SlidingMenu sm;
 
     private TextView tv_title_inContext;
     private AboutFragment mAboutFragment;
-    private HomeFragment mHomeFragment;
+    private MainFragment mMainFragment;
     private SettingFragment mSettingFragment;
 
     private SetTitleInterface mSetTitleInterface;
@@ -61,11 +61,11 @@ public class MainActivityCanSliding extends SlidingFragmentActivity {
         switch (contextSelectEnum){
             case HOME:
                 mSetTitleInterface.setTitle(ContextSelectEnum.HOME);
-                if (mHomeFragment == null) {
-                    mHomeFragment = new HomeFragment();
+                if (mMainFragment == null) {
+                    mMainFragment = new MainFragment();
                 }
-                mHomeFragment.setSetTitleInterface(mSetTitleInterface);
-                switchFragment(mHomeFragment);
+                mMainFragment.setSetTitleInterface(mSetTitleInterface);
+                switchFragment(mMainFragment);
                 break;
             case SETTING:
                 mSetTitleInterface.setTitle(ContextSelectEnum.SETTING);

@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivityCanSliding"
+            android:name=".MainActivityCanSlidingPage"
+            android:label="@string/title_activity_main_activity_no_sliding" />
+        <activity
+            android:name=".MainActivityCanSlidingFragment"
             android:label="@string/title_activity_main_activity_no_sliding" />
         <activity
             android:name=".MainActivityNoSliding"

@@ -5,7 +5,7 @@ import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-import com.chengbiao.ricky.projectframe.MainActivityCanSliding;
+import com.chengbiao.ricky.projectframe.MainActivityCanSlidingPage;
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.adapter.MyPageOfTabAdapter;
 import com.chengbiao.ricky.projectframe.base.BasePage;
@@ -23,9 +23,6 @@ public class OrderPage extends BasePage {
     private OrderPageB mOrderPageB;
     private OrderPageC mOrderPageC;
     private OrderPageD mOrderPageD;
-
-    private View view1, view2, view3;
-    private List<View> viewList;//view数组
 
 	public OrderPage(Context context) {
 		super(context);
@@ -70,7 +67,7 @@ public class OrderPage extends BasePage {
         pt_content1.setMinimumWidth(100);
         vp_content1.setAdapter(new MyPageOfTabAdapter(pageList, titleList));
 
-        MainActivityCanSliding.sm.addIgnoredView(vp_content1);
+        MainActivityCanSlidingPage.sm.addIgnoredView(vp_content1);
     }
 
     @Override
