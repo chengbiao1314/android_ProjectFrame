@@ -2,6 +2,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <include layout="@layout/title_simple"/>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_content1_order_pager"
         android:layout_width="fill_parent"

@@ -30,11 +30,8 @@ public class MainActivity extends Activity {
 
     public void ActionClick(View v){
         switch (v.getId()){
-            case R.id.btn_slidingFrame_page:
-                ActivityUtil.getInstance().startActivity(this,MainActivityCanSlidingPage.class,false);
-                break;
             case R.id.btn_slidingFrame_frag:
-                ActivityUtil.getInstance().startActivity(this,MainActivityCanSlidingFragment.class,false);
+                ActivityUtil.getInstance().startActivity(this,MainActivityCanSliding.class,false);
                 break;
             case R.id.btn_noslidingFrame:
                 ActivityUtil.getInstance().startActivity(this,MainActivityNoSliding.class,false);

@@ -13,19 +13,12 @@
             android:orientation="vertical"
             android:gravity="center">
             <Button
-                android:id="@+id/btn_slidingFrame_page"
-                android:onClick="ActionClick"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:text="进入侧滑风格框架Page"/>
-            <Button
                 android:id="@+id/btn_slidingFrame_frag"
                 android:onClick="ActionClick"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:text="进入侧滑风格框架Fragment"/>
+                android:text="进入侧滑风格框架"/>
             <Button
                 android:id="@+id/btn_noslidingFrame"
                 android:onClick="ActionClick"

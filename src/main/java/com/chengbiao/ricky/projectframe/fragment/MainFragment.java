@@ -11,30 +11,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chengbiao.ricky.projectframe.MainActivityCanSlidingFragment;
-import com.chengbiao.ricky.projectframe.MainActivityCanSlidingPage;
+import com.chengbiao.ricky.projectframe.MainActivityCanSliding;
 import com.chengbiao.ricky.projectframe.R;
-import com.chengbiao.ricky.projectframe.adapter.MyPageAdapter;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
-import com.chengbiao.ricky.projectframe.base.BasePage;
 import com.chengbiao.ricky.projectframe.config.ContextSelectEnum;
 import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
-import com.chengbiao.ricky.projectframe.myview.ViewPageIsScroll;
-import com.chengbiao.ricky.projectframe.page.CenterPage;
-import com.chengbiao.ricky.projectframe.page.HomePage;
-import com.chengbiao.ricky.projectframe.page.MomentsPage;
-import com.chengbiao.ricky.projectframe.page.OrderPage;
 import com.chengbiao.ricky.projectframe.utils.LogUtil;
 import com.chengbiao.ricky.projectframe.utils.StringUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainFragment extends BaseFragment {
     private Context context;
     private View view;
-    private SetTitleInterface mSetTitleInterface;
 
     private FrameLayout fl_context;
     private LinearLayout ll_home;
@@ -55,9 +43,6 @@ public class MainFragment extends BaseFragment {
     private MainOrderFragment mMOrderFragment;
     private MainCenterFragment mMCenterFragment;
 
-    public void setSetTitleInterface(SetTitleInterface mSetTitleInterface){
-        this.mSetTitleInterface = mSetTitleInterface;
-    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main, null);
@@ -153,10 +138,9 @@ public class MainFragment extends BaseFragment {
     }
 
     private void selectIcon(ContextSelectEnum selectIcon){
-        MainActivityCanSlidingFragment.sm.clearIgnoredViews();
+        MainActivityCanSliding.sm.clearIgnoredViews();
         switch (selectIcon){
             case MYHOME:
-                mSetTitleInterface.setTitle(ContextSelectEnum.MYHOME);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_on));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));
@@ -167,7 +151,6 @@ public class MainFragment extends BaseFragment {
                 tv_center.setTextColor(getResources().getColor(R.color.my_gray));
                 break;
             case MYMOMENTS:
-                mSetTitleInterface.setTitle(ContextSelectEnum.MYMOMENTS);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_on));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));
@@ -178,8 +161,7 @@ public class MainFragment extends BaseFragment {
                 tv_center.setTextColor(getResources().getColor(R.color.my_gray));
                 break;
             case MYORDER:
-                MainActivityCanSlidingFragment.sm.addIgnoredView(fl_context);
-                mSetTitleInterface.setTitle(ContextSelectEnum.MYORDER);
+                MainActivityCanSliding.sm.addIgnoredView(fl_context);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_on));
@@ -190,7 +172,6 @@ public class MainFragment extends BaseFragment {
                 tv_center.setTextColor(getResources().getColor(R.color.my_gray));
                 break;
             case MYCENTER:
-                mSetTitleInterface.setTitle(ContextSelectEnum.MYCENTER);
                 iv_home.setBackground(getResources().getDrawable(R.drawable.tab_main_home_off));
                 iv_moments.setBackground(getResources().getDrawable(R.drawable.tab_main_moments_off));
                 iv_order.setBackground(getResources().getDrawable(R.drawable.tab_main_order_off));

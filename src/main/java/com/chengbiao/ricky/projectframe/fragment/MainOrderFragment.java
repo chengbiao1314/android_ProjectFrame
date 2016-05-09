@@ -1,5 +1,6 @@
 package com.chengbiao.ricky.projectframe.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerTabStrip;
@@ -7,9 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.chengbiao.ricky.projectframe.MainActivityCanSlidingFragment;
-import com.chengbiao.ricky.projectframe.MainActivityCanSlidingPage;
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.adapter.MyPageOfTabAdapter;
 import com.chengbiao.ricky.projectframe.base.BasePage;
@@ -18,12 +18,15 @@ import com.chengbiao.ricky.projectframe.page.OrderPageB;
 import com.chengbiao.ricky.projectframe.page.OrderPageC;
 import com.chengbiao.ricky.projectframe.page.OrderPageD;
 import com.chengbiao.ricky.projectframe.utils.LogUtil;
+import com.chengbiao.ricky.projectframe.utils.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainOrderFragment extends Fragment {
     private View view;
+    private Context context;
+    private TextView tv_title;
 
     private PagerTabStrip pt_content1;
     private ViewPager vp_content1;
@@ -37,15 +40,22 @@ public class MainOrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main_order, null);
+        context = getActivity();
 
         LogUtil.v("B:" + getActivity().toString());
 
+        getElement();
         initData();
 
         return view;
     }
 
+    private void getElement(){
+        tv_title = (TextView) view.findViewById(R.id.tv_title);
+    }
+
     public void initData() {
+        tv_title.setText(StringUtil.getInstance().getStringFromRes(context, R.string.main_index_order));
         vp_content1 = (ViewPager) view.findViewById(R.id.vp_content1_order_pager);
         pt_content1 = (PagerTabStrip) view.findViewById(R.id.pt_content1_order_pager);
 

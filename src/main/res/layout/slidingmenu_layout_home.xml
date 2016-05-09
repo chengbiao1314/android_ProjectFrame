@@ -1,11 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content">
+    </FrameLayout>
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="@color/mainColor">
+        android:layout_height="@dimen/title_height">
         <ImageView
             android:id="@+id/iv_slidingmenu"
             android:onClick="sliding_menu_click"
@@ -14,19 +19,5 @@
             android:layout_marginLeft="@dimen/context_left_padding"
             android:layout_centerVertical="true"
             android:background="@drawable/left_slidingmenu"/>
-        <TextView
-            android:id="@+id/tv_title_inContext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="@dimen/title_textSize"
-            android:textColor="@color/my_white"
-            android:text="@string/left_menu_home"/>
     </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/content" >
-    </FrameLayout>
-</LinearLayout>
+</RelativeLayout>
