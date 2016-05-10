@@ -16,9 +16,7 @@ import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
 import com.chengbiao.ricky.projectframe.config.ContextSelectEnum;
 import com.chengbiao.ricky.projectframe.config.StaticTag;
-import com.chengbiao.ricky.projectframe.interfaces.SetTitleInterface;
 import com.chengbiao.ricky.projectframe.utils.LogUtil;
-import com.chengbiao.ricky.projectframe.utils.StringUtil;
 
 public class MainFragment extends BaseFragment {
     private Context context;

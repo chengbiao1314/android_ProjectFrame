@@ -3,18 +3,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/title_simple"/>
+    <LinearLayout
+        style="@style/title_layout"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_textSize"
+            android:textColor="@color/my_white"
+            android:text="AAAA"/>
+        <TextView
+            android:id="@+id/tv_type2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_textSize"
+            android:textColor="@color/my_white"
+            android:text="aaaa"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ordertype_1"
+        style="@style/ll_layout_ordertype">
+        <TextView
+            android:id="@+id/tv_ordertype_1_1"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_1_2"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_1_3"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_1_4"
+            style="@style/ll_layout_item_in_ordertype"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ordertype_2"
+        style="@style/ll_layout_ordertype"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_ordertype_2_1"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_2_2"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_2_3"
+            style="@style/ll_layout_item_in_ordertype"/>
+        <TextView
+            android:id="@+id/tv_ordertype_2_4"
+            style="@style/ll_layout_item_in_ordertype"/>
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_content1_order_pager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1">
-        <android.support.v4.view.PagerTabStrip
-            android:id="@+id/pt_content1_order_pager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"/>
+    </android.support.v4.view.ViewPager>
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content2_order_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:visibility="gone">
     </android.support.v4.view.ViewPager>
 </LinearLayout>

@@ -14,11 +14,9 @@ import com.chengbiao.ricky.projectframe.fragment.MCenterFragment;
 import com.chengbiao.ricky.projectframe.fragment.MHomeFragment;
 import com.chengbiao.ricky.projectframe.fragment.MMomentsFragment;
 import com.chengbiao.ricky.projectframe.fragment.MOrderFragment;
-import com.chengbiao.ricky.projectframe.utils.StringUtil;
 
 
 public class MainActivityNoSliding extends FragmentActivity implements View.OnClickListener {
-    private TextView tv_title_inContext;
     private LinearLayout ll_home;
     private LinearLayout ll_moments;
     private LinearLayout ll_order;
@@ -47,7 +45,6 @@ public class MainActivityNoSliding extends FragmentActivity implements View.OnCl
     }
 
     private void getElement(){
-        tv_title_inContext = (TextView) findViewById(R.id.tv_title_main);
         iv_home = (ImageView) findViewById(R.id.iv_home_main);
         iv_moments = (ImageView) findViewById(R.id.iv_moments_main);
         iv_order = (ImageView) findViewById(R.id.iv_order_main);
@@ -73,7 +70,6 @@ public class MainActivityNoSliding extends FragmentActivity implements View.OnCl
 
     private void selectFragment(ContextSelectEnum contextSelectEnum){
         selectIcon(contextSelectEnum);
-        changeTitle(contextSelectEnum);
         switch (contextSelectEnum){
             case MYHOME:
                 if (mMHomeFragment == null) {
@@ -153,29 +149,6 @@ public class MainActivityNoSliding extends FragmentActivity implements View.OnCl
             default:
                 break;
         }
-    }
-
-    private void changeTitle(ContextSelectEnum titleEnum){
-        switch(titleEnum){
-            case MYHOME:
-                setTitle(R.string.main_index_home);
-                break;
-            case MYMOMENTS:
-                setTitle(R.string.main_index_moments);
-                break;
-            case MYORDER:
-                setTitle(R.string.main_index_order);
-                break;
-            case MYCENTER:
-                setTitle(R.string.main_index_center);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void setTitle(int stringId){
-        tv_title_inContext.setText(StringUtil.getInstance().getStringFromRes(this, stringId));
     }
 
     @Override

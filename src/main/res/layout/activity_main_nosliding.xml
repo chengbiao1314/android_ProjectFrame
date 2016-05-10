@@ -3,20 +3,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="@color/mainColor">
-        <TextView
-            android:id="@+id/tv_title_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="@dimen/title_textSize"
-            android:textColor="@color/my_white"
-            android:text="@string/left_menu_home"/>
-    </RelativeLayout>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="@drawable/line_top">
+        android:background="@drawable/line_top_gray">
         <LinearLayout
             android:id="@+id/ll_home_main"
             style="@style/ll_layout_indexmenu">

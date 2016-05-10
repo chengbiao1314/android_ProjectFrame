@@ -17,8 +17,12 @@
         <item name="android:colorBackgroundCacheHint">@null</item>
     </style>
 
-
-
+    <!--title style-->
+    <style name="title_layout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/title_height</item>
+        <item name="android:background">@color/mainColor</item>
+    </style>
 
     <!-- left menu  -->
     <style name="ll_layout_slidingmenu_left">
@@ -58,6 +62,22 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- order index menu  -->
+    <style name="ll_layout_ordertype">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/line_bottom_gray</item>
+    </style>
+
+    <style name="ll_layout_item_in_ordertype">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

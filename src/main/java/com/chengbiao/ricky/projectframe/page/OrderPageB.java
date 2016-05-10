@@ -15,7 +15,7 @@ public class OrderPageB extends BasePage {
 
     @Override
     public View initView() {
-        return View.inflate(context,R.layout.page_order_b, null);
+        return View.inflate(context,R.layout.page_order_b1, null);
     }
 
     @Override

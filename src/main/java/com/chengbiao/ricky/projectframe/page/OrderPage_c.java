@@ -6,16 +6,16 @@ import android.view.View;
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BasePage;
 
-public class OrderPageC extends BasePage {
+public class OrderPage_c extends BasePage {
     private MOnClickListener mOnClickListener;
 
-	public OrderPageC(Context context) {
+	public OrderPage_c(Context context) {
 		super(context);
 	}
 
     @Override
     public View initView() {
-        return View.inflate(context,R.layout.page_order_c1, null);
+        return View.inflate(context,R.layout.page_order_c2, null);
     }
 
     @Override

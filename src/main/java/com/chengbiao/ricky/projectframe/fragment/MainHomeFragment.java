@@ -2,16 +2,16 @@ package com.chengbiao.ricky.projectframe.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.chengbiao.ricky.projectframe.R;
-import com.chengbiao.ricky.projectframe.utils.StringUtil;
+import com.chengbiao.ricky.projectframe.base.BaseFragment;
+import com.chengbiao.ricky.projectframe.utils.ValueUtil;
 
-public class MainHomeFragment extends Fragment {
+public class MainHomeFragment extends BaseFragment {
     private Context context;
     private View view;
     private TextView tv_title;
@@ -30,6 +30,11 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void initData(){
-        tv_title.setText(StringUtil.getInstance().getStringFromRes(context, R.string.main_index_home));
+        tv_title.setText(ValueUtil.getInstance().getStringFromRes(context, R.string.main_index_home));
+    }
+
+    @Override
+    public void mOnClick(View v) {
+
     }
 }

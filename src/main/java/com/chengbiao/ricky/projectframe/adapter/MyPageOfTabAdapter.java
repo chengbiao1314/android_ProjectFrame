@@ -17,11 +17,9 @@ import java.util.List;
  */
 public class MyPageOfTabAdapter extends PagerAdapter {
     public List<BasePage> mPages;
-    public List<String> mTitles;
 
-    public MyPageOfTabAdapter(List<BasePage> mLists,List<String> mTitle) {
+    public MyPageOfTabAdapter(List<BasePage> mLists) {
         this.mPages = mLists;
-        this.mTitles = mTitle;
     }
 
     @Override
@@ -50,11 +48,11 @@ public class MyPageOfTabAdapter extends PagerAdapter {
         return arg0 == arg1;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-
-        SpannableString str = new SpannableString(mTitles.get(position));
-        str.setSpan(new ForegroundColorSpan(R.color.mainColor),0, str.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return str;
-    }
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//
+//        SpannableString str = new SpannableString(mTitles.get(position));
+//        str.setSpan(new ForegroundColorSpan(R.color.mainColor),0, str.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        return str;
+//    }
 }
