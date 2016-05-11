@@ -34,6 +34,9 @@
         <activity
             android:name=".activity.DialogListActivity"
             android:label="@string/title_activity_dialog_list" />
+        <activity
+            android:name=".activity.ImageViewListActivity"
+            android:label="@string/title_activity_dialog_list" />
     </application>
 
 </manifest>

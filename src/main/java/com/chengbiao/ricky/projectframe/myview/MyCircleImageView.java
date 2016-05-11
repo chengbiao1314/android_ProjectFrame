@@ -41,15 +41,25 @@ public class MyCircleImageView extends ImageView {
 			final Rect rectDest = new Rect(0, 0, getWidth(), getHeight());
 			paint.reset();
 			canvas.drawBitmap(b, rectSrc, rectDest, paint);
-
 		} else {
 			super.onDraw(canvas);
 		}
 	}
 
 	private Bitmap getCircleBitmap(Bitmap bitmap, int pixels) {
-		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-				bitmap.getHeight(), Config.ARGB_8888);
+        Bitmap output = null;
+        if(bitmap.getWidth() > bitmap.getHeight()){
+            output = Bitmap.createBitmap(bitmap.getHeight(),
+                    bitmap.getHeight(), Config.ARGB_8888);
+        }else{
+            output = Bitmap.createBitmap(bitmap.getWidth(),
+                    bitmap.getWidth(), Config.ARGB_8888);
+        }
+
+
+
+//		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+//				bitmap.getHeight(), Config.ARGB_8888);
 		Canvas canvas = new Canvas(output);
 		final int color = 0xff424242;
 		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());

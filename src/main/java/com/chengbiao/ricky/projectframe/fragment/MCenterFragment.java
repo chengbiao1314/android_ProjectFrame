@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.activity.DialogListActivity;
+import com.chengbiao.ricky.projectframe.activity.ImageViewListActivity;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
 import com.chengbiao.ricky.projectframe.utils.ActivityUtil;
 import com.chengbiao.ricky.projectframe.utils.ValueUtil;
@@ -20,6 +21,7 @@ public class MCenterFragment extends BaseFragment {
     private TextView tv_title;
 
     private Button btn_mydialog;
+    private Button btn_myimageview;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_mcenter, null);
@@ -36,6 +38,9 @@ public class MCenterFragment extends BaseFragment {
             case R.id.btn_mydialog:
                 ActivityUtil.getInstance().startActivity(context, DialogListActivity.class,false);
                 break;
+            case R.id.btn_myimageview:
+                ActivityUtil.getInstance().startActivity(context, ImageViewListActivity.class,false);
+                break;
             default:
                 break;
         }
@@ -44,8 +49,10 @@ public class MCenterFragment extends BaseFragment {
     private void getElement() {
         tv_title = (TextView) view.findViewById(R.id.tv_title);
         btn_mydialog = (Button) view.findViewById(R.id.btn_mydialog);
+        btn_myimageview = (Button) view.findViewById(R.id.btn_myimageview);
 
         btn_mydialog.setOnClickListener(mOnClickListener);
+        btn_myimageview.setOnClickListener(mOnClickListener);
     }
 
     private void initData(){
