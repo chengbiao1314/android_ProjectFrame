@@ -11,16 +11,20 @@
             android:id="@+id/tv_type1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/background_leftradius_red"
             android:textSize="@dimen/title_textSize"
             android:textColor="@color/my_white"
-            android:text="AAAA"/>
+            android:text="left"/>
         <TextView
             android:id="@+id/tv_type2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/background_rightradius_white"
+            android:textColor="@color/my_red"
             android:textSize="@dimen/title_textSize"
-            android:textColor="@color/my_white"
-            android:text="aaaa"/>
+            android:text="right"/>
     </LinearLayout>
 
     <LinearLayout

@@ -69,6 +69,13 @@ public class MainOrderFragment extends BaseFragment {
         initData();
 
         return view;
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        LogUtil.v("fragment's onstart has running...");
     }
 
     private void getElement(){
@@ -94,9 +101,9 @@ public class MainOrderFragment extends BaseFragment {
         tv_ordertype_1_3.setOnClickListener(mOnClickListener);
         tv_ordertype_1_4.setOnClickListener(mOnClickListener);
         tv_ordertype_2_1.setOnClickListener(mOnClickListener);
-        tv_ordertype_2_1.setOnClickListener(mOnClickListener);
-        tv_ordertype_2_1.setOnClickListener(mOnClickListener);
-        tv_ordertype_2_1.setOnClickListener(mOnClickListener);
+        tv_ordertype_2_2.setOnClickListener(mOnClickListener);
+        tv_ordertype_2_3.setOnClickListener(mOnClickListener);
+        tv_ordertype_2_4.setOnClickListener(mOnClickListener);
     }
 
     public void initData() {
@@ -161,18 +168,28 @@ public class MainOrderFragment extends BaseFragment {
         vp_content2.setCurrentItem(0);
         changeIndex(0, vp_content1.getCurrentItem());
         changeIndex(1,vp_content1.getCurrentItem());
+
+        mOnClick(tv_type2);
     }
 
     @Override
     public void mOnClick(View v) {
         switch (v.getId()){
             case R.id.tv_type1:
+                tv_type1.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_red));
+                tv_type2.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_white));
+                tv_type1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_white));
+                tv_type2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_red));
                 ll_ordertype_1.setVisibility(View.VISIBLE);
                 vp_content1.setVisibility(View.VISIBLE);
                 ll_ordertype_2.setVisibility(View.GONE);
                 vp_content2.setVisibility(View.GONE);
                 break;
             case R.id.tv_type2:
+                tv_type1.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_white));
+                tv_type2.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_red));
+                tv_type1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_red));
+                tv_type2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_white));
                 ll_ordertype_1.setVisibility(View.GONE);
                 vp_content1.setVisibility(View.GONE);
                 ll_ordertype_2.setVisibility(View.VISIBLE);
@@ -252,7 +269,7 @@ public class MainOrderFragment extends BaseFragment {
                     break;
             }
         }else if (type == 1){
-            switch (index) {
+           switch (index) {
                 case 0:
                     tv_ordertype_2_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
                     tv_ordertype_2_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
