@@ -35,6 +35,7 @@ public class ConfirmTipsDialog extends Dialog implements
 		super.onCreate(savedInstanceState);
 
 		this.setContentView(R.layout.dialog_confirm_tips);
+        this.setCancelable(false);//click back,dialog can dismiss
 		dismiss_btn = (Button) findViewById(R.id.dismisssave_btn);
 		hint_btn = (Button) findViewById(R.id.hintsave_btn);
 		dismiss_btn.setOnClickListener(this);

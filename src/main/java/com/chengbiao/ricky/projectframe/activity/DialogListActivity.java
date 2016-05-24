@@ -50,16 +50,16 @@ public class DialogListActivity extends BaseActivity {
                 dialog.show();
                 break;
             case R.id.btn_datePicker_dialog:
-                new MDatePickerDialog(this,"AA",null,0);
+                new MDatePickerDialog(this,"AA",null,0).show();
                 break;
             case R.id.btn_timePicker_dialog:
-                new MTimePickerDialog(this,"BB",null);
+                new MTimePickerDialog(this,"BB",null).show();
                 break;
             case R.id.btn_loading_dialog:
-                new MLoadingDialog(this,0,"CC");
+                new MLoadingDialog(this,0,"CC").show();
                 break;
             case R.id.btn_callPhone_dialog:
-                new CallPhoneDialog(this,"xiao","13661196508");
+                new CallPhoneDialog(this,"xiao","13661196508").show();
                 break;
             default:
                 break;
