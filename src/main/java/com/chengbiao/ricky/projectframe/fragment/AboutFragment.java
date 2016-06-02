@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
-import com.chengbiao.ricky.projectframe.utils.ValueUtil;
+import com.chengbiao.ricky.projectframe.utils.GetResUtil;
 
 public class AboutFragment extends BaseFragment {
     private Context context;
@@ -30,7 +30,7 @@ public class AboutFragment extends BaseFragment {
     }
 
     private void initData(){
-        tv_title.setText(ValueUtil.getInstance().getStringFromRes(context, R.string.left_menu_about));
+        tv_title.setText(GetResUtil.getInstance().getStringFromRes(context, R.string.left_menu_about));
     }
 
     @Override

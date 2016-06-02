@@ -17,4 +17,13 @@
     <string name="title_activity_main_activity_no_sliding">MainActivityNoSliding</string>
     <string name="title_activity_dialog_list">DialogListActivity</string>
 
+    <!--page title-->
+    <string name="title_mydialog">自定义对话框</string>
+
+    <!--dialog string-->
+    <string name="dialog_title">提示</string>
+    <string name="dialog_message">您确定要执行此操作吗？</string>
+    <string name="dialog_confirm">确认</string>
+    <string name="dialog_cancel">取消</string>
+
 </resources>

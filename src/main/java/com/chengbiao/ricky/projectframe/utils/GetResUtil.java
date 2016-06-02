@@ -1,18 +1,17 @@
 package com.chengbiao.ricky.projectframe.utils;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
 /**
  * Created by ChengBiao on 2016/4/26.
  */
-public class ValueUtil {
-    private static ValueUtil instance;
+public class GetResUtil {
+    private static GetResUtil instance;
 
-    public static synchronized ValueUtil getInstance() {
+    public static synchronized GetResUtil getInstance() {
         if (instance == null) {
-            instance = new ValueUtil();
+            instance = new GetResUtil();
         }
         return instance;
     }

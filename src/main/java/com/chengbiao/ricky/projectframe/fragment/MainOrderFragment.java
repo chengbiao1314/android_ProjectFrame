@@ -21,8 +21,8 @@ import com.chengbiao.ricky.projectframe.page.OrderPage_a;
 import com.chengbiao.ricky.projectframe.page.OrderPage_b;
 import com.chengbiao.ricky.projectframe.page.OrderPage_c;
 import com.chengbiao.ricky.projectframe.page.OrderPage_d;
+import com.chengbiao.ricky.projectframe.utils.GetResUtil;
 import com.chengbiao.ricky.projectframe.utils.LogUtil;
-import com.chengbiao.ricky.projectframe.utils.ValueUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -176,20 +176,20 @@ public class MainOrderFragment extends BaseFragment {
     public void mOnClick(View v) {
         switch (v.getId()){
             case R.id.tv_type1:
-                tv_type1.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_red));
-                tv_type2.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_white));
-                tv_type1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_white));
-                tv_type2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_red));
+                tv_type1.setTextColor(GetResUtil.getInstance().getColorFromRes(context,R.color.my_red));
+                tv_type2.setTextColor(GetResUtil.getInstance().getColorFromRes(context,R.color.my_white));
+                tv_type1.setBackground(GetResUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_white));
+                tv_type2.setBackground(GetResUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_red));
                 ll_ordertype_1.setVisibility(View.VISIBLE);
                 vp_content1.setVisibility(View.VISIBLE);
                 ll_ordertype_2.setVisibility(View.GONE);
                 vp_content2.setVisibility(View.GONE);
                 break;
             case R.id.tv_type2:
-                tv_type1.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_white));
-                tv_type2.setTextColor(ValueUtil.getInstance().getColorFromRes(context,R.color.my_red));
-                tv_type1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_red));
-                tv_type2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_white));
+                tv_type1.setTextColor(GetResUtil.getInstance().getColorFromRes(context,R.color.my_white));
+                tv_type2.setTextColor(GetResUtil.getInstance().getColorFromRes(context,R.color.my_red));
+                tv_type1.setBackground(GetResUtil.getInstance().getDrawableFromRes(context,R.drawable.background_leftradius_red));
+                tv_type2.setBackground(GetResUtil.getInstance().getDrawableFromRes(context,R.drawable.background_rightradius_white));
                 ll_ordertype_1.setVisibility(View.GONE);
                 vp_content1.setVisibility(View.GONE);
                 ll_ordertype_2.setVisibility(View.VISIBLE);
@@ -228,41 +228,41 @@ public class MainOrderFragment extends BaseFragment {
         if (type == 0){
             switch (index) {
                 case 0:
-                    tv_ordertype_1_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_1_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_1_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_1_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_1.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_1_2.setBackground(null);
                     tv_ordertype_1_3.setBackground(null);
                     tv_ordertype_1_4.setBackground(null);
                     break;
                 case 1:
-                    tv_ordertype_1_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_1_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_1_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_1_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_2.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_1_1.setBackground(null);
                     tv_ordertype_1_3.setBackground(null);
                     tv_ordertype_1_4.setBackground(null);
                     break;
                 case 2:
-                    tv_ordertype_1_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_1_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_3.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_1_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_1_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_3.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_1_2.setBackground(null);
                     tv_ordertype_1_1.setBackground(null);
                     tv_ordertype_1_4.setBackground(null);
                     break;
                 case 3:
-                    tv_ordertype_1_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_1_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_1_4.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_1_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_1_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_1_4.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_1_2.setBackground(null);
                     tv_ordertype_1_3.setBackground(null);
                     tv_ordertype_1_1.setBackground(null);
@@ -271,41 +271,41 @@ public class MainOrderFragment extends BaseFragment {
         }else if (type == 1){
            switch (index) {
                 case 0:
-                    tv_ordertype_2_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_2_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_1.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_2_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_2_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_1.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_2_2.setBackground(null);
                     tv_ordertype_2_3.setBackground(null);
                     tv_ordertype_2_4.setBackground(null);
                     break;
                 case 1:
-                    tv_ordertype_2_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_2_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_2.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_2_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_2_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_2.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_2_1.setBackground(null);
                     tv_ordertype_2_3.setBackground(null);
                     tv_ordertype_2_4.setBackground(null);
                     break;
                 case 2:
-                    tv_ordertype_2_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_2_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_3.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_2_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_2_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_3.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_2_2.setBackground(null);
                     tv_ordertype_2_1.setBackground(null);
                     tv_ordertype_2_4.setBackground(null);
                     break;
                 case 3:
-                    tv_ordertype_2_1.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_2.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_3.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.my_gray));
-                    tv_ordertype_2_4.setTextColor(ValueUtil.getInstance().getColorFromRes(context, R.color.mainColor));
-                    tv_ordertype_2_4.setBackground(ValueUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
+                    tv_ordertype_2_1.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_2.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_3.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.my_gray));
+                    tv_ordertype_2_4.setTextColor(GetResUtil.getInstance().getColorFromRes(context, R.color.mainColor));
+                    tv_ordertype_2_4.setBackground(GetResUtil.getInstance().getDrawableFromRes(context, R.drawable.line_bottom_red));
                     tv_ordertype_2_2.setBackground(null);
                     tv_ordertype_2_3.setBackground(null);
                     tv_ordertype_2_1.setBackground(null);

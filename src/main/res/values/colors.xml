@@ -5,7 +5,11 @@
     <drawable name="my_bg_white">#ffffffff</drawable>
 
     <color name="mainColor">#F85050</color>
+    <color name="my_black">#000000</color>
     <color name="my_red">#F85050</color>
     <color name="my_white">#ffffff</color>
+    <color name="my_blue">#1B40ED</color>
     <color name="my_gray">#3C3F41</color>
+    <color name="my_gray0">#666666</color>
+    <color name="my_gray1">#959595</color>
 </resources>

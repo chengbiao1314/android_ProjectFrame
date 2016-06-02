@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="135dp"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
     android:orientation="vertical"
-    android:background="@drawable/background_whiteline">
+    android:background="@drawable/background_white_noline">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_gravity="center"
-        android:text="提示"
-        android:textSize="18sp" />
+        android:text="@string/dialog_title"
+        android:textSize="18sp"
+        android:textColor="@color/my_black"/>
     <TextView
-        android:id="@+id/title_disc"
+        android:id="@+id/tv_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_gravity="center"
-        android:text="您的个人信息有修改是否保存"
-        android:textSize="18sp" />
+        android:text="@string/dialog_message"
+        android:textSize="14sp"
+        android:textColor="@color/my_gray0"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
-
         <Button
-            android:id="@+id/dismisssave_btn"
-            android:layout_width="125dp"
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
             android:layout_height="43dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="取消"/>
-
+            android:background="@drawable/background_white_grayline"
+            android:text="@string/dialog_cancel"
+            android:textSize="20sp"
+            android:textColor="@color/my_gray1"/>
         <Button
-            android:id="@+id/hintsave_btn"
-            android:layout_width="125dp"
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
             android:layout_height="43dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="11dp"
-            android:text="确认"/>
+            android:background="@drawable/background_red_noline"
+            android:text="@string/dialog_confirm"
+            android:textSize="20sp"
+            android:textColor="@color/my_white"/>
     </LinearLayout>
 
 </LinearLayout>

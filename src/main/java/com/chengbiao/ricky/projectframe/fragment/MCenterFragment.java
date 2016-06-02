@@ -13,7 +13,7 @@ import com.chengbiao.ricky.projectframe.activity.DialogListActivity;
 import com.chengbiao.ricky.projectframe.activity.ImageViewListActivity;
 import com.chengbiao.ricky.projectframe.base.BaseFragment;
 import com.chengbiao.ricky.projectframe.utils.ActivityUtil;
-import com.chengbiao.ricky.projectframe.utils.ValueUtil;
+import com.chengbiao.ricky.projectframe.utils.GetResUtil;
 
 public class MCenterFragment extends BaseFragment {
     private View view;
@@ -56,6 +56,6 @@ public class MCenterFragment extends BaseFragment {
     }
 
     private void initData(){
-        tv_title.setText(ValueUtil.getInstance().getStringFromRes(context, R.string.main_index_center));
+        tv_title.setText(GetResUtil.getInstance().getStringFromRes(context, R.string.main_index_center));
     }
 }

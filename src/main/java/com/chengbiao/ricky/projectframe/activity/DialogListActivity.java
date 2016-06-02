@@ -1,9 +1,9 @@
 package com.chengbiao.ricky.projectframe.activity;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.chengbiao.ricky.projectframe.R;
 import com.chengbiao.ricky.projectframe.base.BaseActivity;
@@ -12,8 +12,10 @@ import com.chengbiao.ricky.projectframe.dialog.ConfirmTipsDialog;
 import com.chengbiao.ricky.projectframe.dialog.MDatePickerDialog;
 import com.chengbiao.ricky.projectframe.dialog.MLoadingDialog;
 import com.chengbiao.ricky.projectframe.dialog.MTimePickerDialog;
+import com.chengbiao.ricky.projectframe.utils.GetResUtil;
 
 public class DialogListActivity extends BaseActivity {
+    private TextView tv_title;
     private Button btn_confirmTips_dialog;
     private Button btn_datePicker_dialog;
     private Button btn_timePicker_dialog;
@@ -26,9 +28,11 @@ public class DialogListActivity extends BaseActivity {
         setContentView(R.layout.activity_dialoglist);
 
         getElement();
+        initData();
     }
 
     private void getElement(){
+        tv_title = (TextView) findViewById(R.id.tv_title);
         btn_confirmTips_dialog = (Button) findViewById(R.id.btn_confirmTips_dialog);
         btn_datePicker_dialog = (Button) findViewById(R.id.btn_datePicker_dialog);
         btn_timePicker_dialog = (Button) findViewById(R.id.btn_timePicker_dialog);
@@ -40,6 +44,10 @@ public class DialogListActivity extends BaseActivity {
         btn_timePicker_dialog.setOnClickListener(this);
         btn_loading_dialog.setOnClickListener(this);
         btn_callPhone_dialog.setOnClickListener(this);
+    }
+
+    private void initData(){
+        tv_title.setText(GetResUtil.getInstance().getStringFromRes(this,R.string.title_mydialog));
     }
 
     @Override
