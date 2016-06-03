@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.chengbiao.ricky.projectframe.R;
+import com.chengbiao.ricky.projectframe.config.StaticTag;
 import com.chengbiao.ricky.projectframe.utils.GetResUtil;
 
 
@@ -27,6 +28,7 @@ public class ConfirmTipsDialog extends Dialog implements
 	private TextView tv_title;
     private TextView tv_message;
     private Handler handler;
+    private Bundle bundleData;
 
     private String title;
     private String message;
@@ -72,31 +74,55 @@ public class ConfirmTipsDialog extends Dialog implements
             tv_message.setVisibility(View.VISIBLE);
             tv_message.setText(message);
         }
-        if(message == null || message.isEmpty()){
-            tv_message.setVisibility(View.GONE);
+
+        if(cancel == null || cancel.isEmpty()){
+            btn_cancel.setText(GetResUtil.getInstance().getStringFromRes(context,R.string.dialog_cancel));
         }else{
-            tv_message.setVisibility(View.VISIBLE);
-            tv_message.setText(GetResUtil.getInstance().getStringFromRes(context,R.string.dialog_message));
+            btn_cancel.setText(cancel);
+        }
+        if(confirm == null || confirm.isEmpty()){
+            btn_confirm.setText(GetResUtil.getInstance().getStringFromRes(context, R.string.dialog_confirm));
+        }else{
+            btn_confirm.setText(confirm);
+        }
+
+        if(isShowCancel){
+            btn_cancel.setVisibility(View.VISIBLE);
+        }else{
+            btn_cancel.setVisibility(View.GONE);
+        }
+        if(isShowConfirm){
+            btn_confirm.setVisibility(View.VISIBLE);
+        }else{
+            btn_confirm.setVisibility(View.GONE);
         }
     }
 
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.btn_dismiss:
+		case R.id.btn_cancel:
 			this.dismiss();
 			break;
-		case R.id.btn_call:
-			// 通知activity修改资料
-			Message msg = new Message();
-			msg.what = 2;
-			handler.sendMessage(msg);
+		case R.id.btn_confirm:
+            if(handler != null){
+                Message msg = new Message();
+                msg.what = StaticTag.Dialog_Handler_Code;
+                if (bundleData != null){
+                    msg.setData(bundleData);
+                }
+                handler.sendMessage(msg);
+            }
 			this.dismiss();
 			break;
 		default:
 			break;
 		}
 	}
+
+    public void setBundleData(Bundle bundleData) {
+        this.bundleData = bundleData;
+    }
 
     public void setTitle(String title) {
         this.title = title;

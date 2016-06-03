@@ -5,11 +5,11 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <DatePicker
+   <!-- <DatePicker
         android:id="@+id/datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal" />-->
 
     <View
         android:layout_width="match_parent"
@@ -42,5 +42,11 @@
             android:background="@color/my_white"
             android:text="确定" />
     </LinearLayout>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

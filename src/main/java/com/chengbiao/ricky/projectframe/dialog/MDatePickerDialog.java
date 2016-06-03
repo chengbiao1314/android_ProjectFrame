@@ -30,7 +30,6 @@ public class MDatePickerDialog extends Dialog implements
 	public MDatePickerDialog(Context context, String title, Handler handler,
                              int type) {
 		super(context);
-		// TODO Auto-generated constructor stub
 		this.context = context;
 		this.setTitle(title);
 		this.handler = handler;
@@ -39,7 +38,6 @@ public class MDatePickerDialog extends Dialog implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_datepicker);
 		DatePicker date = (DatePicker) findViewById(R.id.datepicker);
@@ -55,7 +53,6 @@ public class MDatePickerDialog extends Dialog implements
 		date.setCalendarViewShown(false);// 隐藏日历
 		// 初始化DatePicker
 		date.init(year, month, day, new OnDateChangedListener() {
-
 			@Override
 			public void onDateChanged(DatePicker arg0, int year, int month,
 					int day) {
@@ -63,13 +60,11 @@ public class MDatePickerDialog extends Dialog implements
 				MDatePickerDialog.this.month = month;
 				MDatePickerDialog.this.day = day;
 			}
-
 		});
 	}
 
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
 		switch (arg0.getId()) {
 		case R.id.over_btn:
 			this.dismiss();

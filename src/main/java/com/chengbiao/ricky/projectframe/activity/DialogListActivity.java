@@ -1,6 +1,8 @@
 package com.chengbiao.ricky.projectframe.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +14,10 @@ import com.chengbiao.ricky.projectframe.dialog.ConfirmTipsDialog;
 import com.chengbiao.ricky.projectframe.dialog.MDatePickerDialog;
 import com.chengbiao.ricky.projectframe.dialog.MLoadingDialog;
 import com.chengbiao.ricky.projectframe.dialog.MTimePickerDialog;
+import com.chengbiao.ricky.projectframe.myview.MyToast;
 import com.chengbiao.ricky.projectframe.utils.GetResUtil;
+
+import static com.chengbiao.ricky.projectframe.config.StaticTag.*;
 
 public class DialogListActivity extends BaseActivity {
     private TextView tv_title;
@@ -54,7 +59,9 @@ public class DialogListActivity extends BaseActivity {
     public void mOnClick(View v) {
         switch (v.getId()){
             case R.id.btn_confirmTips_dialog:
-                ConfirmTipsDialog dialog = new ConfirmTipsDialog(this,null);
+                ConfirmTipsDialog dialog = new ConfirmTipsDialog(this,handler);
+                dialog.setTitle(GetResUtil.getInstance().getStringFromRes(this, R.string.dialog_title));
+                dialog.setMessage(GetResUtil.getInstance().getStringFromRes(this, R.string.dialog_message));
                 dialog.show();
                 break;
             case R.id.btn_datePicker_dialog:
@@ -73,4 +80,16 @@ public class DialogListActivity extends BaseActivity {
                 break;
         }
     }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case Dialog_Handler_Code:
+                    MyToast.showToast(DialogListActivity.this,"running tips dialog...");
+                    break;
+            }
+        }
+    };
 }

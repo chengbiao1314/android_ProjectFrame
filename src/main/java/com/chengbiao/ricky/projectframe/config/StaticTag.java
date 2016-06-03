@@ -9,4 +9,6 @@ public class StaticTag {
 
     public static int Tag_takePictureByCamera = 10000;
     public static int Tag_choosePictureFromSystem = 10001;
+
+    public final static int Dialog_Handler_Code = 44444;
 }
