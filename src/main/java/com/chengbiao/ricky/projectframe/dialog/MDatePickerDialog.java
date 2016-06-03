@@ -40,9 +40,10 @@ public class MDatePickerDialog extends Dialog implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_datepicker);
+
 		DatePicker date = (DatePicker) findViewById(R.id.datepicker);
-		ok_btn = (Button) findViewById(R.id.ok_btn);
-		dissmis_btn = (Button) findViewById(R.id.over_btn);
+		ok_btn = (Button) findViewById(R.id.btn_confirm);
+		dissmis_btn = (Button) findViewById(R.id.btn_cancel);
 		ok_btn.setOnClickListener(this);
 		dissmis_btn.setOnClickListener(this);
 		// 或许当前的年月日，小时，分钟
@@ -50,7 +51,7 @@ public class MDatePickerDialog extends Dialog implements
 		year = ca.get(Calendar.YEAR);
 		month = ca.get(Calendar.MONTH);
 		day = ca.get(Calendar.DAY_OF_MONTH);
-		date.setCalendarViewShown(false);// 隐藏日历
+		date.setCalendarViewShown(true);// 隐藏日历
 		// 初始化DatePicker
 		date.init(year, month, day, new OnDateChangedListener() {
 			@Override
@@ -66,10 +67,10 @@ public class MDatePickerDialog extends Dialog implements
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.over_btn:
+		case R.id.btn_cancel:
 			this.dismiss();
 			break;
-		case R.id.ok_btn:
+		case R.id.btn_confirm:
 			if (year > ca.get(Calendar.YEAR)) {
 
 			} else if (year == ca.get(Calendar.YEAR)) {
